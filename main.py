@@ -44,8 +44,8 @@ ball.color("white")
 ball.penup()
 ball.goto(0, 0)
 
-ball.dx = 0.1
-ball.dy = 0.1
+ball.dx = 0.2
+ball.dy = 0.2
 
 
 # Score
@@ -66,21 +66,29 @@ pen.write(f"Player 1: {score_a}  Player 2: {score_b}", align="center", font=("Co
 def stick_a_up():
     y = stick_a.ycor()
     y+=20
+    if(y >= 260):
+        y-=20 
     stick_a.sety(y)
 
 def stick_a_down():
     y = stick_a.ycor()
     y-=20
+    if y<= -260:
+        y+=20
     stick_a.sety(y)
 
 def stick_b_up():
     y = stick_b.ycor()
     y+=20
+    if(y >= 260):
+        y-=20
     stick_b.sety(y)
 
 def stick_b_down():
     y = stick_b.ycor()
     y-=20
+    if y<= -260:
+        y+=20
     stick_b.sety(y)
 
 def to_quit():
